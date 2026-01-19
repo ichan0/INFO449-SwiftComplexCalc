@@ -28,6 +28,63 @@ print("Welcome back to the UW Calculator")
 //: IMPORTANT: If any tests are commented out, you will be graded a zero (0)! You should never be in the habit of eliminating tests to make the code pass.
 //:
 class Calculator {
+    
+    func add(lhs: Int, rhs: Int) -> Int {
+        return -1
+    }
+    
+    func subtract(lhs: Int, rhs: Int) -> Int {
+        return -1
+    }
+    
+    func multiply(lhs: Int, rhs: Int) -> Int {
+        return -1
+    }
+    
+    func divide(lhs: Int, rhs: Int) -> Int {
+        return -1
+    }
+    
+    func mathOp(lhs: Int, rhs: Int, op: (Int, Int) -> Int) -> Int {
+        return -1
+    }
+    
+    func add(_: [Int]) -> Int {
+        return -1
+    }
+    
+    func multiply(_: [Int]) -> Int {
+        return -1
+    }
+    
+    func count(_: [Int]) -> Int {
+        return -1
+    }
+    
+    func avg(_: [Int]) -> Int {
+        return -1
+    }
+    
+    func mathOp(args: [Int], beg: Int, op: (Int, Int) -> Int) -> Int {
+        return -1
+    }
+    
+    func add(lhs: (Int, Int), rhs: (Int, Int)) -> (Int, Int) {
+        return (-1, -1)
+    }
+    
+    func subtract(lhs: (Int, Int), rhs: (Int, Int)) -> (Int, Int) {
+        return (-1, -1)
+    }
+    
+    func add(lhs: [String: Int], rhs: [String: Int]) -> [String: Int] {
+        return ["x": -1, "y": -1]
+    }
+    
+    func subtract(lhs: [String: Int], rhs: [String: Int]) -> [String: Int] {
+        return ["x": -1, "y": -1]
+    }
+    
 }
 
 //: Don't change the name of this object (`calc`); it's used in all the tests.
