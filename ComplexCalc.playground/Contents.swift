@@ -46,7 +46,7 @@ class Calculator {
     }
     
     func mathOp(lhs: Int, rhs: Int, op: (Int, Int) -> Int) -> Int {
-        return -1
+        return op(lhs, rhs)
     }
     
     func add(_ nums: [Int]) -> Int {
@@ -85,7 +85,11 @@ class Calculator {
     }
     
     func mathOp(args: [Int], beg: Int, op: (Int, Int) -> Int) -> Int {
-        return -1
+        var result = beg
+        for num in args {
+            result = op(result, num)
+        }
+        return result
     }
     
     func add(lhs: (Int, Int), rhs: (Int, Int)) -> (Int, Int) {
@@ -127,7 +131,10 @@ let calc = Calculator()
 //: Keep in mind that writing new tests may reveal ambiguity in the specification above--if that's the case, document the ambiguity, declare what you think *should* happen, and write the test to test for it.
 
 // ===== Your tests go here
-
+calc.multiply(lhs: -2, rhs: 2) == -4
+calc.add([]) == 0 // Should result in 0 because if theres nothing to add it should be assumed it's 0.
+calc.multiply([]) == 0 // same case above.
+//calc.avg([]) == 0 // fails because of division by 0
 //: ---
 //: ## Test code block
 //: Do not modify the code in this section
