@@ -133,7 +133,8 @@ let calc = Calculator()
 // ===== Your tests go here
 calc.multiply(lhs: -2, rhs: 2) == -4
 calc.add([]) == 0 // Should result in 0 because if theres nothing to add it should be assumed it's 0.
-calc.multiply([]) == 0 // same case above.
+calc.multiply([]) == 0 // fails because in the function the logic starts with result = 1 instead of 0 because 0 * anything would result in 0
+calc.multiply([2, 2]) == 4
 //calc.avg([]) == 0 // fails because of division by 0
 //: ---
 //: ## Test code block
