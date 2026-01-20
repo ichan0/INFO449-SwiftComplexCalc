@@ -30,39 +30,58 @@ print("Welcome back to the UW Calculator")
 class Calculator {
     
     func add(lhs: Int, rhs: Int) -> Int {
-        return -1
+        return lhs + rhs
     }
     
     func subtract(lhs: Int, rhs: Int) -> Int {
-        return -1
+        return lhs - rhs
     }
     
     func multiply(lhs: Int, rhs: Int) -> Int {
-        return -1
+        return lhs * rhs
     }
     
     func divide(lhs: Int, rhs: Int) -> Int {
-        return -1
+        return lhs / rhs
     }
     
     func mathOp(lhs: Int, rhs: Int, op: (Int, Int) -> Int) -> Int {
         return -1
     }
     
-    func add(_: [Int]) -> Int {
-        return -1
+    func add(_ nums: [Int]) -> Int {
+        var result: Int = 0
+        
+        for i in nums {
+            result += i
+        }
+        return result
     }
     
-    func multiply(_: [Int]) -> Int {
-        return -1
+    func multiply(_ nums: [Int]) -> Int {
+        var result: Int = 1
+        for num in nums {
+            result *= num
+        }
+        return result
     }
     
-    func count(_: [Int]) -> Int {
-        return -1
+    func count(_ nums: [Int]) -> Int {
+        var count = 0
+        for num in nums {
+            count += 1
+        }
+        return count
     }
     
-    func avg(_: [Int]) -> Int {
-        return -1
+    func avg(_ nums: [Int]) -> Int {
+        var count: Int = 0
+        var total: Int = 0
+        for num in nums {
+            count += 1
+            total += num
+        }
+        return total / count
     }
     
     func mathOp(args: [Int], beg: Int, op: (Int, Int) -> Int) -> Int {
@@ -70,19 +89,27 @@ class Calculator {
     }
     
     func add(lhs: (Int, Int), rhs: (Int, Int)) -> (Int, Int) {
-        return (-1, -1)
+        return (lhs.0 + rhs.0, lhs.1 + rhs.1)
     }
     
     func subtract(lhs: (Int, Int), rhs: (Int, Int)) -> (Int, Int) {
-        return (-1, -1)
+        return (lhs.0 - rhs.0, lhs.1 - rhs.1)
     }
     
     func add(lhs: [String: Int], rhs: [String: Int]) -> [String: Int] {
-        return ["x": -1, "y": -1]
+        var result: [String: Int] = [:]
+        for key in lhs.keys {
+            result[key] = (lhs[key] ?? 0) + (rhs[key] ?? 0)
+        }
+        return result
     }
     
     func subtract(lhs: [String: Int], rhs: [String: Int]) -> [String: Int] {
-        return ["x": -1, "y": -1]
+        var result: [String: Int] = [:]
+        for key in lhs.keys {
+            result[key] = (lhs[key] ?? 0) - (rhs[key] ?? 0)
+        }
+        return result
     }
     
 }
